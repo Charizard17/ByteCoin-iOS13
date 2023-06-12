@@ -20,7 +20,7 @@ struct CoinManager {
     var delegate: CoinManagerDelegate?
     
     func getCoinPrice(for currency: String) {
-        let urlString = "\(baseURL)/\(currency)&apikey=\(coinApiKey)"
+        let urlString = "\(baseURL)/\(currency)?apikey=\(coinApiKey)"
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
